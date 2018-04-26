@@ -1,4 +1,4 @@
-###/kitty directory 
+### /kitty directory
 
 Clone kitty-hats-manifest here.  
 
