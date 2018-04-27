@@ -148,7 +148,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/kittyhats/dev/1524777526966-2018-04-26T21:18:46.966Z/kittyhats.zip"
+                "S3Key": "serverless/kittyhats/dev/1524802540901-2018-04-27T04:15:40.901Z/kittyhats.zip"
               },
               "FunctionName": "kittyhats-dev-getKittyStickers",
               "Handler": "handler.getKittyStickers",
@@ -172,14 +172,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetKittyStickersLambdaVersionKDgYwxEqCl0f4VIZqPZ2YkKPqKjWvMGyU6o4P22las": {
+          "GetKittyStickersLambdaVersionQaPrNxGcNFUqinQGixUEg2lofCo6BgIOaDEHvej2Ed4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetKittyStickersLambdaFunction"
               },
-              "CodeSha256": "KDgYwxEqCl0f4VIZqPZ2Y/kKPqKjWvMGyU6o4P22las="
+              "CodeSha256": "QaPrNxGcNFUqinQGixUEg2lofCo6BgIOaDEHvej2Ed4="
             }
           },
           "InvalidateKittyIdLambdaFunction": {
@@ -189,7 +189,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/kittyhats/dev/1524777526966-2018-04-26T21:18:46.966Z/kittyhats.zip"
+                "S3Key": "serverless/kittyhats/dev/1524802540901-2018-04-27T04:15:40.901Z/kittyhats.zip"
               },
               "FunctionName": "kittyhats-dev-invalidateKittyId",
               "Handler": "handler.invalidateKittyId",
@@ -213,14 +213,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "InvalidateKittyIdLambdaVersionKDgYwxEqCl0f4VIZqPZ2YkKPqKjWvMGyU6o4P22las": {
+          "InvalidateKittyIdLambdaVersionQaPrNxGcNFUqinQGixUEg2lofCo6BgIOaDEHvej2Ed4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "InvalidateKittyIdLambdaFunction"
               },
-              "CodeSha256": "KDgYwxEqCl0f4VIZqPZ2Y/kKPqKjWvMGyU6o4P22las="
+              "CodeSha256": "QaPrNxGcNFUqinQGixUEg2lofCo6BgIOaDEHvej2Ed4="
             }
           },
           "ApiGatewayRestApi": {
@@ -429,7 +429,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1524777527132": {
+          "ApiGatewayDeployment1524802541521": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -545,13 +545,13 @@
           "GetKittyStickersLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetKittyStickersLambdaVersionKDgYwxEqCl0f4VIZqPZ2YkKPqKjWvMGyU6o4P22las"
+              "Ref": "GetKittyStickersLambdaVersionQaPrNxGcNFUqinQGixUEg2lofCo6BgIOaDEHvej2Ed4"
             }
           },
           "InvalidateKittyIdLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "InvalidateKittyIdLambdaVersionKDgYwxEqCl0f4VIZqPZ2YkKPqKjWvMGyU6o4P22las"
+              "Ref": "InvalidateKittyIdLambdaVersionQaPrNxGcNFUqinQGixUEg2lofCo6BgIOaDEHvej2Ed4"
             }
           },
           "ServiceEndpoint": {
@@ -709,7 +709,7 @@
     "artifact": "/Users/DanielViau/Desktop/stuff/kitty-hats-org/kitty-hats-api/.build/.serverless/kittyhats.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/kittyhats/dev/1524777526966-2018-04-26T21:18:46.966Z",
+    "artifactDirectoryName": "serverless/kittyhats/dev/1524802540901-2018-04-27T04:15:40.901Z",
     "artifact": "kittyhats.zip"
   }
 }
