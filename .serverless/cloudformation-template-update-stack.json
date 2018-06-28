@@ -8,13 +8,13 @@
     "GetKittyStickersLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/kittyhats-dev-getKittyStickers"
+        "LogGroupName": "/aws/lambda/kittyhats-prod-getKittyStickers"
       }
     },
     "InvalidateKittyIdLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/kittyhats-dev-invalidateKittyId"
+        "LogGroupName": "/aws/lambda/kittyhats-prod-invalidateKittyId"
       }
     },
     "IamRoleLambdaExecution": {
@@ -42,7 +42,7 @@
               "Fn::Join": [
                 "-",
                 [
-                  "dev",
+                  "prod",
                   "kittyhats",
                   "lambda"
                 ]
@@ -58,10 +58,10 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/kittyhats-dev-getKittyStickers:*"
+                      "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/kittyhats-prod-getKittyStickers:*"
                     },
                     {
-                      "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/kittyhats-dev-invalidateKittyId:*"
+                      "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/kittyhats-prod-invalidateKittyId:*"
                     }
                   ]
                 },
@@ -72,10 +72,10 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/kittyhats-dev-getKittyStickers:*:*"
+                      "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/kittyhats-prod-getKittyStickers:*:*"
                     },
                     {
-                      "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/kittyhats-dev-invalidateKittyId:*:*"
+                      "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/kittyhats-prod-invalidateKittyId:*:*"
                     }
                   ]
                 },
@@ -89,7 +89,7 @@
                     "dynamodb:UpdateItem",
                     "dynamodb:DeleteItem"
                   ],
-                  "Resource": "arn:aws:dynamodb:us-west-2:*:table/kittyhats-dev"
+                  "Resource": "arn:aws:dynamodb:us-west-2:*:table/kittyhats-prod"
                 }
               ]
             }
@@ -101,7 +101,7 @@
             "-",
             [
               "kittyhats",
-              "dev",
+              "prod",
               "us-west-2",
               "lambdaRole"
             ]
@@ -116,9 +116,9 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/kittyhats/dev/1524802540901-2018-04-27T04:15:40.901Z/kittyhats.zip"
+          "S3Key": "serverless/kittyhats/prod/1530166880135-2018-06-28T06:21:20.135Z/kittyhats.zip"
         },
-        "FunctionName": "kittyhats-dev-getKittyStickers",
+        "FunctionName": "kittyhats-prod-getKittyStickers",
         "Handler": "handler.getKittyStickers",
         "MemorySize": 1024,
         "Role": {
@@ -131,7 +131,7 @@
         "Timeout": 6,
         "Environment": {
           "Variables": {
-            "DYNAMODB_TABLE": "kittyhats-dev"
+            "DYNAMODB_TABLE": "kittyhats-prod"
           }
         }
       },
@@ -140,14 +140,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GetKittyStickersLambdaVersionQaPrNxGcNFUqinQGixUEg2lofCo6BgIOaDEHvej2Ed4": {
+    "GetKittyStickersLambdaVersionvxG125iucSPUE6X3ggXyWfxNpyEH83U9RJePSBotD18": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetKittyStickersLambdaFunction"
         },
-        "CodeSha256": "QaPrNxGcNFUqinQGixUEg2lofCo6BgIOaDEHvej2Ed4="
+        "CodeSha256": "vxG125iucSPUE6X3ggXyWfxNpyEH83U9RJePSBotD18="
       }
     },
     "InvalidateKittyIdLambdaFunction": {
@@ -157,9 +157,9 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/kittyhats/dev/1524802540901-2018-04-27T04:15:40.901Z/kittyhats.zip"
+          "S3Key": "serverless/kittyhats/prod/1530166880135-2018-06-28T06:21:20.135Z/kittyhats.zip"
         },
-        "FunctionName": "kittyhats-dev-invalidateKittyId",
+        "FunctionName": "kittyhats-prod-invalidateKittyId",
         "Handler": "handler.invalidateKittyId",
         "MemorySize": 1024,
         "Role": {
@@ -172,7 +172,7 @@
         "Timeout": 6,
         "Environment": {
           "Variables": {
-            "DYNAMODB_TABLE": "kittyhats-dev"
+            "DYNAMODB_TABLE": "kittyhats-prod"
           }
         }
       },
@@ -181,20 +181,20 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "InvalidateKittyIdLambdaVersionQaPrNxGcNFUqinQGixUEg2lofCo6BgIOaDEHvej2Ed4": {
+    "InvalidateKittyIdLambdaVersionvxG125iucSPUE6X3ggXyWfxNpyEH83U9RJePSBotD18": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "InvalidateKittyIdLambdaFunction"
         },
-        "CodeSha256": "QaPrNxGcNFUqinQGixUEg2lofCo6BgIOaDEHvej2Ed4="
+        "CodeSha256": "vxG125iucSPUE6X3ggXyWfxNpyEH83U9RJePSBotD18="
       }
     },
     "ApiGatewayRestApi": {
       "Type": "AWS::ApiGateway::RestApi",
       "Properties": {
-        "Name": "dev-kittyhats"
+        "Name": "prod-kittyhats"
       }
     },
     "ApiGatewayResourceGetkittystickers": {
@@ -397,13 +397,13 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1524802541521": {
+    "ApiGatewayDeployment1530166880443": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         },
-        "StageName": "dev"
+        "StageName": "prod"
       },
       "DependsOn": [
         "ApiGatewayMethodGetkittystickersGet",
@@ -496,7 +496,7 @@
           "ReadCapacityUnits": 1,
           "WriteCapacityUnits": 1
         },
-        "TableName": "kittyhats-dev",
+        "TableName": "kittyhats-prod",
         "TimeToLiveSpecification": {
           "AttributeName": "expireAt",
           "Enabled": true
@@ -513,13 +513,13 @@
     "GetKittyStickersLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetKittyStickersLambdaVersionQaPrNxGcNFUqinQGixUEg2lofCo6BgIOaDEHvej2Ed4"
+        "Ref": "GetKittyStickersLambdaVersionvxG125iucSPUE6X3ggXyWfxNpyEH83U9RJePSBotD18"
       }
     },
     "InvalidateKittyIdLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "InvalidateKittyIdLambdaVersionQaPrNxGcNFUqinQGixUEg2lofCo6BgIOaDEHvej2Ed4"
+        "Ref": "InvalidateKittyIdLambdaVersionvxG125iucSPUE6X3ggXyWfxNpyEH83U9RJePSBotD18"
       }
     },
     "ServiceEndpoint": {
@@ -532,7 +532,7 @@
             {
               "Ref": "ApiGatewayRestApi"
             },
-            ".execute-api.us-west-2.amazonaws.com/dev"
+            ".execute-api.us-west-2.amazonaws.com/prod"
           ]
         ]
       }
